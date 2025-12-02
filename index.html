@@ -18,7 +18,67 @@
 
     html { scroll-behavior: smooth; }
 
-    /* ===== NAVBAR ===== */
+    /* ============================================================
+       PRELOADER (Paleta Neon Esportiva)
+    ============================================================ */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #0a0f1d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+      overflow: hidden;
+    }
+
+    .waves {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        135deg,
+        #00b7ff 0px,
+        #00b7ff 40px,
+        #00ff9d 40px,
+        #00ff9d 80px,
+        #ffe600 80px,
+        #ffe600 120px
+      );
+      opacity: 0.22;
+      animation: waveMove 3s linear infinite;
+      transform: rotate(5deg);
+    }
+
+    @keyframes waveMove {
+      from { transform: translate(30%, 30%) rotate(5deg); }
+      to { transform: translate(-30%, -30%) rotate(5deg); }
+    }
+
+    .ball {
+      width: 110px;
+      height: 110px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Volleyball_%28flat_design%29.svg');
+      background-size: cover;
+      animation: spin 1.2s linear infinite;
+      filter: drop-shadow(0 0 12px #00b7ff);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+      pointer-events: none;
+    }
+
+    /* ============================================================
+       RESTO DO SEU CSS (não toquei em nada)
+    ============================================================ */
+
     .navbar {
       position: fixed; top:0; width:100%;
       background: rgba(0,0,0,0.7);
@@ -33,7 +93,6 @@
     }
     .navbar a:hover, .navbar a.active { color:#00ff99; }
 
-    /* ===== INFO EXTRA (SECRETRIA) ===== */
     .info-extra {
       margin-top: 90px;
       text-align: center;
@@ -50,7 +109,6 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.5);
     }
 
-    /* ===== INTRO ===== */
     .intro {
       text-align: center;
       padding: 180px 20px 80px;
@@ -73,7 +131,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ===== SLIDER ===== */
     .slider-container { text-align:center; overflow:hidden; padding:20px 0; }
     .slider { display:flex; gap:10px; }
     .slider img {
@@ -87,7 +144,6 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* ===== BOTÃO ===== */
     .btn-gradient {
       display:inline-block; margin-top:20px; padding:12px 25px;
       color:#fff; font-weight:bold; border-radius:25px;
@@ -96,7 +152,6 @@
     }
     .btn-gradient:hover { filter:brightness(1.2); transform:scale(1.05); }
 
-    /* ===== FOOTER ===== */
     footer {
       background: rgba(0,0,0,0.5);
       text-align:center;
@@ -107,7 +162,6 @@
       width:100%;
     }
 
-    /* ===== RESPONSIVO ===== */
     @media(max-width:768px){
       .slider img { width:200px; height:130px; }
       .navbar ul { flex-direction:column; background: rgba(0,0,0,0.9); }
@@ -117,7 +171,6 @@
       .intro h2 { font-size: 1.2em; }
     }
 
-    /* ===== CURSOR EMOJI 🏐 ===== */
     .emoji-cursor {
       position: fixed;
       pointer-events: none;
@@ -139,6 +192,14 @@
 </head>
 
 <body>
+
+<!-- ============================================================
+     PRELOADER (inserido aqui no lugar correto)
+============================================================ -->
+<div id="preloader">
+  <div class="waves"></div>
+  <div class="ball"></div>
+</div>
 
 <header>
   <nav class="navbar">
@@ -184,10 +245,16 @@
   <p>© 2025 Brasil no Ar. Todos os direitos reservados.</p>
 </footer>
 
-<!-- ===== CURSOR 🏐 ===== -->
 <div id="emojiCursor" class="emoji-cursor" aria-hidden="true">🏐</div>
 
 <script>
+  // Preloader
+  window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("fade-out");
+    setTimeout(() => preloader.style.display = "none", 600);
+  });
+
   // Slider automático
   const slider = document.getElementById('slider');
   const clone = slider.innerHTML;
@@ -222,3 +289,4 @@
 
 </body>
 </html>
+
