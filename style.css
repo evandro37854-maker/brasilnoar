@@ -67,3 +67,65 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
   text-transform: uppercase;
 }
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #0a0f1d; /* Fundo escuro esportivo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  overflow: hidden;
+}
+
+/* ===== ONDA EM LISTRAS NEON ===== */
+.waves {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    135deg,
+    #00b7ff 0px,   /* Azul neon */
+    #00b7ff 40px,
+    #00ff9d 40px,  /* Verde neon */
+    #00ff9d 80px,
+    #ffe600 80px,  /* Amarelo neon */
+    #ffe600 120px
+  );
+  opacity: 0.22;
+  animation: waveMove 3s linear infinite;
+  transform: rotate(5deg);
+}
+
+@keyframes waveMove {
+  from {
+    transform: translate(30%, 30%) rotate(5deg);
+  }
+  to {
+    transform: translate(-30%, -30%) rotate(5deg);
+  }
+}
+
+/* ===== BOLA DE VÔLEI GIRANDO ===== */
+.ball {
+  width: 110px;
+  height: 110px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Volleyball_%28flat_design%29.svg');
+  background-size: cover;
+  animation: spin 1.2s linear infinite;
+  filter: drop-shadow(0 0 12px #00b7ff);
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== SUMIR QUANDO CARREGAR ===== */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+  pointer-events: none;
+}
+
