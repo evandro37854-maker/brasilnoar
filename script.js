@@ -1,3 +1,7 @@
+// ===============================
+// ===== FUNDO DAS BOLAS =====
+// ===============================
+
 // ===== PEGAR O DIV DO FUNDO =====
 let fundo = document.getElementById('fundoBolas');
 
@@ -38,4 +42,31 @@ document.body.addEventListener('mousemove', (e) => {
   document.body.style.setProperty('--x', `${x}px`);
   document.body.style.setProperty('--y', `${y}px`);
   document.body.classList.add('mousemove-ativo');
+});
+
+
+
+
+// ===============================
+// ===== LOADER COM ONDA NEON =====
+// ===============================
+
+// Criar o loader
+const loader = document.createElement('div');
+loader.id = 'loader';
+loader.innerHTML = `
+  <div class="onda"></div>
+  <div class="onda"></div>
+  <div class="onda"></div>
+  <div class="onda"></div>
+  <div class="bola-loader">🏐</div>
+`;
+document.body.appendChild(loader);
+
+// Remover o loader quando a página carregar
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    loader.classList.add('sumir');
+    setTimeout(() => loader.remove(), 800);
+  }, 800);
 });
