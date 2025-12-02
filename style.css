@@ -9,16 +9,16 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     background-image: url('images/img8.png'); /* sua imagem */
-    background-size: cover;      /* cobre toda a tela */
+    background-size: cover;
     background-repeat: no-repeat; 
     background-position: center; 
-    background-attachment: fixed; /* fundo fixo */
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
 /* ===== HEADER ===== */
 header {
-    background-color: rgba(0,0,0,0.5); /* transparente escuro */
+    background-color: rgba(0,0,0,0.5);
     padding: 20px;
     text-align: center;
 }
@@ -41,7 +41,7 @@ main {
 }
 
 .apresentacao {
-    background-color: rgba(0,0,0,0.4); /* leve transparência */
+    background-color: rgba(0,0,0,0.4);
     padding: 30px;
     border-radius: 10px;
 }
@@ -51,10 +51,9 @@ footer {
     background-color: rgba(0,0,0,0.5);
     text-align: center;
     padding: 15px;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
+
 .info-extra {
   font-size: 0.95em;
   color: #00ff99;
@@ -67,65 +66,92 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
   text-transform: uppercase;
 }
-/* ===== PRELOADER ===== */
-#preloader {
+
+/* ------------------------------------------ */
+/* == PRELOADER == */
+/* ------------------------------------------ */
+
+#loader {
   position: fixed;
   inset: 0;
-  background: #0a0f1d; /* Fundo escuro esportivo */
+  background: #0a0f1d; 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999999;
   overflow: hidden;
+  z-index: 999999;
 }
 
-/* ===== ONDA EM LISTRAS NEON ===== */
-.waves {
+/* ondas neon */
+.onda {
   position: absolute;
-  width: 200%;
-  height: 200%;
+  width: 250%;
+  height: 250%;
   background: repeating-linear-gradient(
     135deg,
-    #00b7ff 0px,   /* Azul neon */
+    #00b7ff 0px,
     #00b7ff 40px,
-    #00ff9d 40px,  /* Verde neon */
+    #00ff9d 40px,
     #00ff9d 80px,
-    #ffe600 80px,  /* Amarelo neon */
+    #ffe600 80px,
     #ffe600 120px
   );
   opacity: 0.22;
-  animation: waveMove 3s linear infinite;
-  transform: rotate(5deg);
+  animation: ondaMover 3.5s linear infinite;
+  transform: rotate(7deg);
 }
 
-@keyframes waveMove {
-  from {
-    transform: translate(30%, 30%) rotate(5deg);
-  }
-  to {
-    transform: translate(-30%, -30%) rotate(5deg);
-  }
+.onda:nth-child(2) { animation-duration: 4s; opacity: 0.15; }
+.onda:nth-child(3) { animation-duration: 5s; opacity: 0.10; }
+.onda:nth-child(4) { animation-duration: 6s; opacity: 0.08; }
+
+@keyframes ondaMover {
+  from { transform: translate(35%, 35%) rotate(7deg); }
+  to   { transform: translate(-35%, -35%) rotate(7deg); }
 }
 
-/* ===== BOLA DE VÔLEI GIRANDO ===== */
-.ball {
-  width: 110px;
-  height: 110px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Volleyball_%28flat_design%29.svg');
-  background-size: cover;
-  animation: spin 1.2s linear infinite;
+/* bola central */
+.bola-loader {
+  font-size: 95px;
+  animation: girarBola 1.3s linear infinite;
   filter: drop-shadow(0 0 12px #00b7ff);
 }
 
-@keyframes spin {
-  0%   { transform: rotate(0deg); }
+@keyframes girarBola {
+  0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* ===== SUMIR QUANDO CARREGAR ===== */
-.fade-out {
+/* desaparecer */
+#loader.sumir {
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  transition: opacity 0.8s ease-out;
   pointer-events: none;
 }
+
+/* ------------------------------------------ */
+/* == FUNDO COM BOLAS DE VÔLEI == */
+/* ------------------------------------------ */
+
+.fundo-bolas {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  transform: translate(var(--x), var(--y));
+  transition: transform 0.2s linear;
+}
+
+.bola {
+  position: absolute;
+  animation: flutuar 18s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(20deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
 
