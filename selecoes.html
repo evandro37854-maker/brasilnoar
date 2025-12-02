@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil no Ar - Seleções</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/img11.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-y: auto;
+      cursor: none; /* Esconde o cursor padrão */
+      padding-top: 100px; /* 🔹 Espaço extra para rolar a partir do topo */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .navbar ul { list-style:none; display:flex; padding:0; }
+    .navbar li { margin:0 15px; }
+    .navbar a { 
+      display:block; padding:15px 10px; color:#fff; text-decoration:none; font-weight:bold; transition:0.3s;
+    }
+    .navbar a:hover, .navbar a.active { color:#00ff99; }
+
+    /* ===== CONTEÚDO ===== */
+    .content {
+      padding: 100px 20px 120px; /* 🔹 Espaço ajustado para combinar com o topo */
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: aparecer 1.5s ease-out forwards;
+    }
+
+    .content h2, .content h3, .content h4 { color:#00ff99; margin-bottom:15px; }
+    .content p, .content ul { margin-bottom:15px; }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: rgba(0,0,0,0.5);
+      text-align:center;
+      padding:10px;
+      font-size:14px;
+      position: relative;
+      width:100%;
+      margin-top: 40px;
+    }
+
+    /* ===== CURSOR EMOJI ===== */
+    #cursorEmoji {
+      position: fixed;
+      pointer-events: none;
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+      z-index: 2000;
+    }
+
+    @media(max-width:768px){
+      .navbar ul { flex-direction: column; background: rgba(0,0,0,0.9); }
+      .navbar li { margin:5px 0; }
+      .content { padding: 120px 15px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Emoji que segue o cursor -->
+<div id="cursorEmoji">🏐</div>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="selecoes.html" class="active">Seleções</a></li>
+      <li><a href="conquistas.html">Conquistas</a></li>
+      <li><a href="contatos.html">Contatos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="content">
+  <h2>🏐 Seleções Brasileiras de Vôlei</h2>
+
+  <h3>🇧🇷 Masculina</h3>
+  <ul>
+    <li>🥇 Ouro Olímpico: 1992, 2004, 2016</li>
+    <li>🥈 Prata Olímpica: 1984, 2008, 2012</li>
+    <li>🥇 Campeonato Mundial: 2002, 2006, 2010</li>
+    <li>🥇 Liga Mundial: 9 títulos</li>
+    <li>🥇 Campeonato Sul-Americano: +30 títulos</li>
+  </ul>
+  <p>Ídolos: Bernardinho, Renan, Giba, Serginho, Dante, Ricardinho, André Nascimento.</p>
+
+  <h3>👑 Feminina</h3>
+  <ul>
+    <li>🥇 Ouro Olímpico: 2008, 2012</li>
+    <li>🥈 Prata Olímpica: 2020</li>
+    <li>🥇 Grand Prix: 12 títulos</li>
+    <li>🥇 Campeonato Sul-Americano: +20 títulos</li>
+    <li>🥇 Copa dos Campeões: 2005, 2013</li>
+  </ul>
+  <p>Ídolos: Ana Moser, Fernanda Venturini, Virna, Sheilla, Fabiana, Fabi, Jaqueline, Thaísa, Paula Pequeno.  
+  Nova geração: Gabi, Rosamaria, Macris, Carol Gattaz.</p>
+</section>
+
+<footer>
+  <p>© 2025 Brasil no Ar. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script do cursor -->
+<script>
+document.addEventListener("mousemove", function(e) {
+  const emoji = document.getElementById("cursorEmoji");
+  emoji.style.left = e.pageX + "px";
+  emoji.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>

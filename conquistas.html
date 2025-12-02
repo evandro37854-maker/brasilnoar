@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil no Ar - Conquistas</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/img11.png') no-repeat center center fixed;
+      background-size: cover;
+      color:#fff;
+      line-height:1.6;
+      min-height:100vh;
+      overflow-y:auto;
+      cursor: none; /* Esconde o cursor padrão */
+      padding-top: 100px; /* 🔹 Espaço para rolar suavemente desde o topo */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top:0;
+      width:100%;
+      background: rgba(0,0,0,0.7);
+      z-index:1000;
+      display:flex;
+      justify-content:center;
+      backdrop-filter: blur(4px);
+    }
+    .navbar ul { list-style:none; display:flex; padding:0; }
+    .navbar li { margin:0 15px; }
+    .navbar a { display:block; padding:15px 10px; color:#fff; text-decoration:none; font-weight:bold; transition:0.3s; }
+    .navbar a:hover, .navbar a.active { color:#00ff99; }
+
+    /* ===== CONTEÚDO ===== */
+    .content {
+      background: rgba(0,0,0,0.55);
+      padding: 160px 20px 120px;
+      max-width:1000px;
+      margin: 100px auto 60px;
+      border-radius:12px;
+      box-shadow:0 0 15px rgba(0,0,0,0.4);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: aparecer 1.5s ease-out forwards;
+    }
+
+    .content h2, .content h3 { color:#00ff99; margin-bottom:15px; }
+    .content p, .content ul { margin-bottom:15px; }
+
+    .content ul { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
+    .content li { background: rgba(0,255,153,0.1); padding:15px; border-radius:10px; }
+
+    @keyframes aparecer {
+      from { opacity:0; transform:translateY(50px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    footer {
+      background: rgba(0,0,0,0.5);
+      text-align:center;
+      padding:10px;
+      font-size:14px;
+      position:relative;
+      width:100%;
+      margin-top:40px;
+    }
+
+    /* ===== CURSOR EMOJI ===== */
+    #cursorEmoji {
+      position: fixed;
+      pointer-events: none;
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+      z-index: 2000;
+    }
+
+    @media(max-width:768px){
+      .navbar ul { flex-direction:column; background: rgba(0,0,0,0.9); }
+      .navbar li { margin:5px 0; }
+      .content { margin: 80px 10px 0; padding: 90px 15px 110px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Emoji que segue o cursor -->
+<div id="cursorEmoji">🏐</div>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="selecoes.html">Seleções</a></li>
+      <li><a href="conquistas.html" class="active">Conquistas</a></li>
+      <li><a href="contatos.html">Contatos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="content">
+  <h2>🏆 Conquistas da Seleção Brasileira de Vôlei</h2>
+
+  <h3>🇧🇷 Masculina</h3>
+  <ul>
+    <li>🏆 Jogos Olímpicos: Ouro 1992, 2004, 2016 | Prata 1984, 2008, 2012</li>
+    <li>🌍 Campeonato Mundial: Ouro 2002, 2006, 2010 | Prata 2014, 2018</li>
+    <li>🌐 Liga Mundial/Liga das Nações: 9 títulos</li>
+    <li>🏅 Copa do Mundo: Ouro 2003, 2007</li>
+    <li>🇸🇪 Campeonato Sul-Americano: +30 títulos</li>
+  </ul>
+
+  <h3>👑 Feminina</h3>
+  <ul>
+    <li>🏆 Jogos Olímpicos: Ouro 2008, 2012 | Prata 2020</li>
+    <li>🌍 Campeonato Mundial: Prata 1994, 2006, 2010, 2022 | Bronze 2014</li>
+    <li>🌐 Grand Prix/Liga das Nações: 12 títulos Grand Prix</li>
+    <li>🏅 Copa dos Campeões: Ouro 2005, 2013</li>
+    <li>🇸🇪 Campeonato Sul-Americano: +20 títulos</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Brasil no Ar. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script do cursor -->
+<script>
+document.addEventListener("mousemove", function(e) {
+  const emoji = document.getElementById("cursorEmoji");
+  emoji.style.left = e.pageX + "px";
+  emoji.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil no Ar - Início</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/img11.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top:0; width:100%;
+      background: rgba(0,0,0,0.7);
+      z-index:1000; display:flex; justify-content:center;
+      backdrop-filter: blur(4px);
+    }
+    .navbar ul { list-style:none; display:flex; padding:0; }
+    .navbar li { margin:0 15px; }
+    .navbar a {
+      display:block; padding:15px 10px; color:#fff;
+      text-decoration:none; font-weight:bold; transition:0.3s;
+    }
+    .navbar a:hover, .navbar a.active { color:#00ff99; }
+
+    /* ===== INFO EXTRA (SECRETRIA) ===== */
+    .info-extra {
+      margin-top: 90px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      background: rgba(0,0,0,0.55);
+      width: fit-content;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+      color: #00ffcc;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
+
+    /* ===== INTRO ===== */
+    .intro {
+      text-align: center;
+      padding: 180px 20px 80px;
+      max-width: 900px;
+      margin: 60px auto 100px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: aparecer 1.5s ease-out forwards;
+    }
+    .intro h1 { font-size: 2.5em; color: #00ff99; margin-bottom: 10px; }
+    .intro h2 { font-size: 1.5em; color: #a9cce3; margin-bottom: 20px; }
+    .intro p { font-size: 1.1em; color: #e0e0e0; }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SLIDER ===== */
+    .slider-container { text-align:center; overflow:hidden; padding:20px 0; }
+    .slider { display:flex; gap:10px; }
+    .slider img {
+      width:300px; height:200px; object-fit:cover; border-radius:10px;
+      transition:transform 0.3s, opacity 0.6s;
+      opacity: 0; animation: slideIn 1.5s forwards;
+    }
+    .slider img:hover { transform:scale(1.1); }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(80px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ===== BOTÃO ===== */
+    .btn-gradient {
+      display:inline-block; margin-top:20px; padding:12px 25px;
+      color:#fff; font-weight:bold; border-radius:25px;
+      background:linear-gradient(90deg,#0d1b2a,#00ff99);
+      text-decoration:none; transition:filter 0.3s, transform 0.3s;
+    }
+    .btn-gradient:hover { filter:brightness(1.2); transform:scale(1.05); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: rgba(0,0,0,0.5);
+      text-align:center;
+      padding:10px;
+      font-size:14px;
+      position:relative;
+      bottom:0;
+      width:100%;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media(max-width:768px){
+      .slider img { width:200px; height:130px; }
+      .navbar ul { flex-direction:column; background: rgba(0,0,0,0.9); }
+      .navbar li { margin:5px 0; }
+      .btn-gradient { padding:10px 20px; }
+      .intro h1 { font-size: 1.8em; }
+      .intro h2 { font-size: 1.2em; }
+    }
+
+    /* ===== CURSOR EMOJI 🏐 ===== */
+    .emoji-cursor {
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      z-index: 9999;
+      transition: transform 0.05s linear;
+      user-select: none;
+      display: none;
+    }
+    .use-emoji-cursor * {
+      cursor: none !important;
+    }
+    @media (pointer: coarse) {
+      .emoji-cursor { display: none !important; }
+      .use-emoji-cursor * { cursor: auto !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="selecoes.html">Seleções</a></li>
+      <li><a href="conquistas.html">Conquistas</a></li>
+      <li><a href="contatos.html">Contatos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="info-extra">
+  SECRETARIA DE ESTADO DE EDUCAÇÃO - MS <br>
+  CENTRO DE EDUCAÇÃO PROFISSIONAL EZEQUIEL FERREIRA LIMA <br>
+  CURSO TÉCNICO EM INFORMÁTICA PARA INTERNET
+</div>
+
+<section class="intro">
+  <h1>🏐 Bem-vindo ao Brasil no Ar!</h1>
+  <h2>O portal que respira o vôlei brasileiro</h2>
+  <p>
+    Seja bem-vindo ao nosso espaço dedicado à paixão nacional que vai além das quadras.
+    Aqui, você encontra informações sobre o mundo do vôlei brasileiro — tanto da seleção
+    masculina quanto da feminina. Explore, conheça e valorize o esporte que faz o Brasil
+    brilhar mundo afora. 💚💛
+  </p>
+</section>
+
+<section class="slider-container">
+  <div class="slider" id="slider">
+    <img src="images/img2.png" alt="Foto 2">
+    <img src="images/img3.png" alt="Foto 3">
+    <img src="images/img4.png" alt="Foto 4">
+    <img src="images/img5.png" alt="Foto 5">
+    <img src="images/img6.png" alt="Foto 6">
+  </div>
+  <a href="contatos.html" class="btn-gradient">Fale Conosco</a>
+</section>
+
+<footer>
+  <p>© 2025 Brasil no Ar. Todos os direitos reservados.</p>
+</footer>
+
+<!-- ===== CURSOR 🏐 ===== -->
+<div id="emojiCursor" class="emoji-cursor" aria-hidden="true">🏐</div>
+
+<script>
+  // Slider automático
+  const slider = document.getElementById('slider');
+  const clone = slider.innerHTML;
+  slider.innerHTML += clone;
+  let pos = 0;
+  function animate() {
+    pos -= 1;
+    if(pos <= -slider.scrollWidth/2) pos = 0;
+    slider.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Cursor Emoji 🏐
+  (function(){
+    const emojiEl = document.getElementById('emojiCursor');
+    const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+    if(isTouch){ emojiEl.style.display='none'; return; }
+
+    document.documentElement.classList.add('use-emoji-cursor');
+    emojiEl.style.display='block';
+
+    document.addEventListener('mousemove', e => {
+      emojiEl.style.left = e.clientX + 'px';
+      emojiEl.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseleave', ()=> emojiEl.style.opacity='0');
+    document.addEventListener('mouseenter', ()=> emojiEl.style.opacity='1');
+  })();
+</script>
+
+</body>
+</html>

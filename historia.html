@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil no Ar - História</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/img11.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-y: auto;
+      cursor: none; /* Esconde o cursor padrão */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+    }
+
+    .navbar li { margin: 0 15px; }
+
+    .navbar a {
+      display: block;
+      padding: 15px 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover, .navbar a.active { color: #00ff99; }
+
+    .content {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 160px 20px 120px;
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: aparecer 1.5s ease-out forwards;
+    }
+
+    .content h2, .content h3, .content h4 { color:#00ff99; margin-bottom:15px; }
+    .content p, .content ul { margin-bottom:15px; }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      position: relative;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    /* ======= CURSOR EMOJI ======= */
+    #cursorEmoji {
+      position: fixed;
+      pointer-events: none;
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+      z-index: 2000;
+    }
+
+    @media (max-width: 768px){
+      .navbar ul { flex-direction: column; background: rgba(0,0,0,0.9); }
+      .navbar li { margin: 5px 0; }
+      .content { margin: 80px 10px 0; padding: 90px 15px 110px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Emoji que segue o cursor -->
+<div id="cursorEmoji">🏐</div>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="historia.html" class="active">História</a></li>
+      <li><a href="selecoes.html">Seleções</a></li>
+      <li><a href="conquistas.html">Conquistas</a></li>
+      <li><a href="contatos.html">Contatos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="content">
+  <h2>🏐 História da Seleção Brasileira de Vôlei</h2>
+  <p>🇧🇷 <strong>Início e evolução do vôlei no Brasil</strong></p>
+  <p>O vôlei chegou ao Brasil por volta de 1915, trazido por imigrantes e missionários norte-americanos. Nas décadas seguintes, cresceu nas escolas e clubes, tornando-se uma das principais modalidades.</p>
+  <p>A Confederação Brasileira de Voleibol (CBV) foi fundada em 1954, marcando o início oficial das seleções nacionais.</p>
+
+  <h3>🥇 Seleção Masculina</h3>
+  <p><strong>Anos 1980 — Geração de Prata:</strong> Prata Olímpica 1984, Ouro Pan 1983.</p>
+  <p><strong>Anos 1990 — Primeira geração de ouro:</strong> Ouro Olímpico 1992, Liga Mundial 1993.</p>
+  <p><strong>Anos 2000 — Era Bernardinho:</strong> Ouro Olímpico 2004, Mundiais 2002/2006/2010, Liga Mundial 8 títulos.</p>
+  <p><strong>Anos 2010–2020:</strong> Ouro Rio 2016, Mundial 2018, Prata Tóquio 2020.</p>
+
+  <h3>👑 Seleção Feminina</h3>
+  <p><strong>Anos 1990 — Ascensão:</strong> Bronze Olímpico 1996, Ouro Grand Prix 1994.</p>
+  <p><strong>Anos 2000 — Domínio:</strong> Ouro Olímpico 2008/2012, Grand Prix e Copa dos Campeões.</p>
+  <p><strong>Anos 2010–2020:</strong> Prata Tóquio 2020, novas atletas: Gabi, Rosamaria, Macris, Carol Gattaz.</p>
+
+  <h3>🏆 Legado</h3>
+  <p>O Brasil é uma potência mundial do vôlei, com dezenas de títulos e medalhas, reconhecido pelo estilo técnico e vibrante.</p>
+</section>
+
+<footer>
+  <p>© 2025 Brasil no Ar. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script do cursor -->
+<script>
+document.addEventListener("mousemove", function(e) {
+  const emoji = document.getElementById("cursorEmoji");
+  emoji.style.left = e.pageX + "px";
+  emoji.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>
