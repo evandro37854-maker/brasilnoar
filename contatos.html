@@ -106,14 +106,6 @@
       .content { margin: 100px 10px 0; padding: 30px 15px; }
     }
   </style>
-
-  <script>
-    // Evita envio do formulário
-    function demonstracao(event) {
-      event.preventDefault();
-      alert("📩 Esta é apenas uma demonstração! Nenhuma informação será enviada.");
-    }
-  </script>
 </head>
 <body>
 
@@ -133,8 +125,7 @@
   <h2>📲 Contatos</h2>
   <p>Mande para a gente quaisquer dúvidas, críticas e opiniões através dos campos abaixo!</p>
 
-  <!-- FORMULÁRIO APENAS VISUAL -->
-  <form onsubmit="demonstracao(event)">
+  <form action="mural.php" method="POST">
     <input type="text" name="nome" placeholder="Nome" required>
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Mensagem" rows="5" required></textarea>
@@ -148,7 +139,7 @@
 
 </body>
 </html>
-
+s
 
 
 
