@@ -68,7 +68,20 @@ footer {
 }
 
 /* ------------------------------------------ */
-/* == PRELOADER == */
+.titulo {
+  position: relative;
+  background: linear-gradient(90deg, #00ffcc, #00ff77, #00ffcc);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brilho 4s infinite linear;
+}
+
+@keyframes brilho {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
 /* ------------------------------------------ */
 
 #loader {
@@ -153,5 +166,6 @@ footer {
   50% { transform: translateY(-40px) rotate(20deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
+
 
 
