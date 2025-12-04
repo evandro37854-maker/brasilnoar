@@ -1,5 +1,18 @@
 // ===============================
-// ===== FUNDO DAS BOLAS =====
+<script>
+document.addEventListener("mousemove", (e) => {
+  const brilho = document.createElement("div");
+  brilho.className = "rastro";
+  brilho.style.left = e.pageX + "px";
+  brilho.style.top = e.pageY + "px";
+  document.body.appendChild(brilho);
+
+  setTimeout(() => {
+    brilho.remove();
+  }, 300);
+});
+</script>
+
 // ===============================
 
 // ===== PEGAR O DIV DO FUNDO =====
@@ -70,3 +83,4 @@ window.addEventListener('load', () => {
     setTimeout(() => loader.remove(), 800);
   }, 800);
 });
+
