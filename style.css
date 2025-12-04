@@ -67,6 +67,16 @@ footer {
   text-transform: uppercase;
 }
 
+nav a {
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
 /* ------------------------------------------ */
 .titulo {
   position: relative;
@@ -80,6 +90,15 @@ footer {
 @keyframes brilho {
   0% { background-position: 0%; }
   100% { background-position: 300%; }
+}
+
+.galeria img {
+  transition: 0.4s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.08);
+  filter: brightness(120%);
 }
 
 /* ------------------------------------------ */
@@ -143,7 +162,24 @@ footer {
 }
 
 /* ------------------------------------------ */
-/* == FUNDO COM BOLAS DE VÔLEI == */
+.rastro {
+  width: 8px;
+  height: 8px;
+  background: #00ffcc;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  box-shadow: 0 0 15px #00ffcc;
+  animation: sumir 0.3s forwards;
+}
+
+@keyframes sumir {
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
 /* ------------------------------------------ */
 
 .fundo-bolas {
@@ -166,6 +202,7 @@ footer {
   50% { transform: translateY(-40px) rotate(20deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
+
 
 
 
