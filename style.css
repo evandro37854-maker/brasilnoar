@@ -1,3 +1,15 @@
+body {
+  background: linear-gradient(270deg, #020617, #020b2d, #031238);
+  background-size: 600% 600%;
+  animation: fundoAnimado 12s ease infinite;
+}
+
+@keyframes fundoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* ===== FONTE E RESET ===== */
 * {
     margin: 0;
@@ -202,6 +214,7 @@ nav a:hover {
   50% { transform: translateY(-40px) rotate(20deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
+
 
 
 
