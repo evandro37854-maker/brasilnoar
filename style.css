@@ -27,6 +27,12 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
 }
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* ===== HEADER ===== */
 header {
@@ -214,6 +220,7 @@ nav a:hover {
   50% { transform: translateY(-40px) rotate(20deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
+
 
 
 
